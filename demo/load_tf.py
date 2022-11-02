@@ -13,17 +13,20 @@
 # Code Developed by:
 # Ahmed A. A. Osman
 
-from supr.tf.supr import SUPR
-import tensorflow as tf
 import numpy as np
-batch_size = 10
-gender = 'male'
- 
-path_model = '' 
-supr = SUPR(path_model)
-trans = tf.constant(np.zeros((1,3)),dtype=tf.float32)
-pose = tf.constant(np.zeros((1,75*3)),dtype=tf.float32)
-betas = tf.constant(np.zeros((1,10)),dtype=tf.float32)
-vv =supr(pose,betas,trans)
-import pdb;pdb.set_trace()
+import tensorflow as tf
 
+from supr.tf.supr import SUPR
+
+batch_size = 10
+gender = "male"
+
+path_model = ""
+supr = SUPR(path_model)
+trans = tf.constant(np.zeros((1, 3)), dtype=tf.float32)
+pose = tf.constant(np.zeros((1, 75 * 3)), dtype=tf.float32)
+betas = tf.constant(np.zeros((1, 10)), dtype=tf.float32)
+vv = supr(pose, betas, trans)
+import pdb
+
+pdb.set_trace()

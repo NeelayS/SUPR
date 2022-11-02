@@ -14,25 +14,38 @@
 #
 # Code Developed by:
 # Ahmed A. A. Osman
-from supr.pytorch.supr import SUPR
+
 import numpy as np
-from numpy import newaxis
-import pickle
-import os
 import torch
 
-betas = np.array([
-            np.array([ 2.25176191, -3.7883464, 0.46747496, 3.89178988,
-                      2.20098416, 0.26102114, -3.07428093, 0.55708514,
-                      -3.94442258, -2.88552087])])
-num_betas=10
-batch_size=1
-m = SUPR(path_model,num_betas=num_betas)
-poses = torch.cuda.FloatTensor(np.zeros((batch_size,75*3)))
+from supr.pytorch.supr import SUPR
+
+MODEL_PATH = "/home/nshah/work/models/supr/supr_male.npy"
+
+betas = np.array(
+    [
+        np.array(
+            [
+                2.25176191,
+                -3.7883464,
+                0.46747496,
+                3.89178988,
+                2.20098416,
+                0.26102114,
+                -3.07428093,
+                0.55708514,
+                -3.94442258,
+                -2.88552087,
+            ]
+        )
+    ]
+)
+num_betas = 10
+batch_size = 1
+m = SUPR(MODEL_PATH, num_betas=num_betas)
+poses = torch.cuda.FloatTensor(np.zeros((batch_size, 75 * 3)))
 betas = torch.cuda.FloatTensor(betas)
 
-trans = torch.cuda.FloatTensor(np.zeros((batch_size,3)))
-model = m.forward(poses, betas,trans)
+trans = torch.cuda.FloatTensor(np.zeros((batch_size, 3)))
+model = m.forward(poses, betas, trans)
 shaped = model.v_shaped[-1, :, :]
-
-

@@ -15,13 +15,15 @@
 
 import os
 
-data_type = 'float32'
+data_type = "float32"
 
-if data_type not in ['float16','float32','float64']:
-    raise RuntimeError('Invalid data type %s'%(data_type))
+if data_type not in ["float16", "float32", "float64"]:
+    raise RuntimeError("Invalid data type %s" % (data_type))
+
 
 class meta(object):
-    pass 
+    pass
+
 
 cfg = meta()
 cfg.data_type = data_type
