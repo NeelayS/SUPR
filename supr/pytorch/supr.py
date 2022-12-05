@@ -108,7 +108,7 @@ class SUPR(nn.Module):
         )
         beta = betas[:, :, None]
         num_verts = v_template.shape[1]
-        batch_size = v_template.shape[0]
+        
         v_shaped = torch.matmul(shapedirs, beta).view(-1, num_verts, 3) + v_template
 
         num_joints = int(self.J_regressor.shape[0] / 3)
