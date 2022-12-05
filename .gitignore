@@ -2,3 +2,11 @@
 **/dist
 **/build
 **/demo/convert
+**/supr.egg-info
+**/dist
+**/build
+**/demo/convert
+__pycache__/__init__.cpython-39.pyc
+supr/pytorch/__pycache__/__init__.cpython-39.pyc
+supr/pytorch/__pycache__/supr.cpython-39.pyc
+supr/pytorch/__pycache__/utils.cpython-39.pyc
