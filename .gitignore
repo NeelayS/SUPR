@@ -6,6 +6,8 @@
 **/dist
 **/build
 **/demo/convert
+**/*pycache*
+*pycache*
 __pycache__/__init__.cpython-39.pyc
 supr/pytorch/__pycache__/__init__.cpython-39.pyc
 supr/pytorch/__pycache__/supr.cpython-39.pyc
