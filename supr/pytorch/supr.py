@@ -181,11 +181,11 @@ class SUPR(nn.Module):
         posed_joints = posed_joints + trans[:, None, :]
 
         output = {
-            "vertices": vertices[-1, :, :],
-            "joints": posed_joints[-1, :, :],
+            "vertices": vertices,
+            "joints": posed_joints,
             "faces": self.f,
-            "v_shaped": v_shaped[-1, :, :],
-            "v_posed": v_posed[-1, :, :],
+            "v_shaped": v_shaped,
+            "v_posed": v_posed,
         }
 
         return output
